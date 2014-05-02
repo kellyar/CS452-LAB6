@@ -1,0 +1,34 @@
+Here is my sudo-code for lab6.
+
+Main file
+
+	I would set up opengl and the necessary shaders as we have been doing all along.
+
+
+Create a plane
+
+	I would create a header file that contains the following arrays
+		- Verticies which holds the positions of the corners
+		- Colors which holds the colors of each vertex
+		- Indicies to opengl knows what order to render the verticies in
+
+	Then in the main file I would set up a vao and vbo to hold all of this data.  I would link this data to variables in the shader program.
+
+Create a Polyhedron on the plane. example cylinder,cube,sphere etc.
+	
+	In the shapes header file I would add another vertices, color, and indices arrays for the new shape.  Again in the main file I would make another vao and vbo to add this data to.
+
+Create a light.
+
+	I would add normal data to all of the shapes im using.  This would be used for lighting calculations.  The lighting would be applied in the shaders using the different kind of lighting you want to use.
+
+
+
+Create a shadow casted by the object.
+
+	Create a texture to hold the shadow map. Then I can use this texture in the shaders to apply a shadow.  I would look to see if the distance from the camera to the fragment was less than the depth to see if the fragment is in shadow or not.  Knowing this I could apply the shadowing or not.
+
+
+Create Camera controls that spin around the cube.
+
+	Use the keyboard event handlers to control moving the camera around
